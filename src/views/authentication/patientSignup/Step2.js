@@ -9,7 +9,25 @@ export default class Step2 extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {};
+		this.state = {
+			password: '',
+			passwordError: '',
+		};
+	}
+
+
+	handlePassChange = event => {
+		this.setState({ password: event.target.value }, () => {
+			this.validatePassword();
+		});
+	};
+
+	validatePassword = () => {
+		const { password } = this.state;
+		this.setState({
+			passwordError:
+				password.length > 6 ? null : 'password must be longer than 3 characters'
+		});
 	}
 
 
@@ -97,15 +115,16 @@ export default class Step2 extends Component {
 							<div className="form-group row">
 								<label htmlFor="psword" className="col-sm-2 col-form-label">Password</label>
 								<div className="col-sm-5">
-									<input type="password" className="form-control" placeholder="Password" />
+									<input type="password" name="password" id="password" className="form-control" className={`form-control ${this.state.passwordError ? 'is-invalid' : ''}`}
+										value={this.state.password}
+										onChange={this.handlePassChange}
+										onBlur={this.validatePassword}
+										placeholder="Password" />
+									<div className="text-danger">{this.state.passwordError}</div>
 								</div>
+
 							</div>
-							<div className="form-group row">
-								<label htmlFor="cpsword" className="col-sm-2 col-form-label">Confirm Password</label>
-								<div className="col-sm-5">
-									<input type="password" className="form-control" placeholder="Confirm Password" />
-								</div>
-							</div>
+
 							<div className="form-group row">
 								<div className="col-sm-1">
 									<input type="checkbox" className="form-control" placeholder="Confirm Password" />

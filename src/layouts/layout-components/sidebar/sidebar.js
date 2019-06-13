@@ -85,7 +85,7 @@ class Sidebar extends React.Component {
 									<DropdownMenu>
 										<DropdownItem>
 											<i className="ti-user"></i> My Profile
-                    					</DropdownItem>
+										</DropdownItem>
 										<DropdownItem>
 											<i className="ti-wallet"></i> My Balance
                     					</DropdownItem>
@@ -183,6 +183,17 @@ class Sidebar extends React.Component {
 											</Collapse>
 										</li>
 									);
+								}
+								else if (prop.hide) {
+									/*--------------------------------------------------------------------------------*/
+									/* Adding Hide Sidebar Item                                                            */
+									/*--------------------------------------------------------------------------------*/
+									<li className={this.activeRoute(prop.path) + (prop.pro ? ' active active-pro' : '') + ' sidebar-item'} key={key}>
+										<NavLink to={prop.path} className="sidebar-link" activeClassName="deactive">
+											<i className={prop.icon} />
+											<span className="hide-menu">{prop.name}</span>
+										</NavLink>
+									</li>
 								}
 								else {
 									return (

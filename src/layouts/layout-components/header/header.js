@@ -484,9 +484,13 @@ class Header extends React.Component {
 										<div className="ml-3">
 											<h4 className="mb-0">Steave Jobs</h4>
 											<p className="text-muted mb-0">varun@gmail.com</p>
-											<Button color="danger" className="btn-rounded mt-2">
-												View Profile
-                      </Button>
+
+											<NavLink href="/profiles/userProfile">
+												<Button color="danger" className="btn-rounded mt-2">
+													View Profile
+											    </Button>
+											</NavLink>
+
 										</div>
 									</div>
 									<DropdownItem>

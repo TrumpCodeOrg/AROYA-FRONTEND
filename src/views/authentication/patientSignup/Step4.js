@@ -28,7 +28,7 @@ export default class Step4 extends Component {
 											<div>
 												<h1>Thanks</h1>
 												<h2>Data was successfully saved to cloud...</h2>
-												<span className="btn btn-info text-white" onClick={() => { this.props.jumpToStep(4) }}>Save</span>
+												<span className="btn btn-success text-white" onClick={() => { this.props.jumpToStep(4) }}>Save</span>
 											</div>
 
 									}

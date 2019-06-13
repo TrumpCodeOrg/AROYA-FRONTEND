@@ -86,6 +86,8 @@ class PatientSignup extends React.Component {
                     <StepZilla
                       steps={steps}
                       nextTextOnFinalActionStep={"Save"}
+                      nextButtonCls={"btn btn-prev btn-success btn-lg pull-right"}
+                      backButtonCls={"btn btn-next btn-success btn-lg pull-left"}
                     />
                   </div>
                 </div>
