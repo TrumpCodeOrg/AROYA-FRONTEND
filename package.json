@@ -34,7 +34,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
-    "chart.js": "2.7.2",
+    "chart.js": "2.9.4",
     "chroma-js": "^1.4.1",
     "firebase": "^5.7.2",
     "history": "4.7.2",
